@@ -35,3 +35,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+\.idea/\.idea\.gamejam2018-pratiques-Doudou/\.idea/
+
+Assets/Plugins/Editor/JetBrains/
