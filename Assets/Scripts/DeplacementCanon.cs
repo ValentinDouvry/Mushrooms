@@ -10,6 +10,6 @@ public class DeplacementCanon : MonoBehaviour {
 		float y = Input.GetAxis("Mouse Y") * Time.deltaTime * sensibilite; 
  
 		transform.Rotate(0, x, 0); 
-		transform.Rotate(y, 0, 0); 
+		transform.Rotate(0, 0, y); 
 	} 
 }
