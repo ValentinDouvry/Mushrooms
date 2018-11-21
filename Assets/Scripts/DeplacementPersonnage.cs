@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deplacementPersonnage : MonoBehaviour {
+public class DeplacementPersonnage : MonoBehaviour {
 
     public float speed = 2f;
     private float hAxis;
