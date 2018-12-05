@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EtatPnj : MonoBehaviour {
-    private bool infected;
+    public bool infected;
     private float time;
-    private bool contagieux;
+    public bool contagieux;
     private const float TIMELIMIT = 5f;
     public int chanceInfection = 10;
    

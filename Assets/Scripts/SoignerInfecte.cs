@@ -14,7 +14,7 @@ public class SoignerInfecte : MonoBehaviour {
 	void Update () {
 
        // Debug.Log(pnjCollisions.Count);
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButtonDown("Fire3"))
         {
             if (pnjCollisions.Count > 0)
             {

@@ -21,9 +21,28 @@ public class AffichageTrajectoire : MonoBehaviour
     private Collider _hitObject;
     public Collider hitObject { get { return _hitObject; } }
 
+    private Renderer rend;
+
+    public GameObject projectile;
+    //public GameObject canon;
+    public Transform departProjectile;
+
+    private Vector3[] segments;
+    private Vector3 segVelocity;
+    public float velociteProjectile = 8.7f;
+
     void FixedUpdate()
     {
         simulatePath();
+        //HighlightObjetTouche();
+    }
+
+    void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Tirer();
+        }
     }
 
     /// <summary>
@@ -32,16 +51,17 @@ public class AffichageTrajectoire : MonoBehaviour
     /// </summary>
     void simulatePath()
     {
-        Vector3[] segments = new Vector3[segmentCount];
+        segments = new Vector3[segmentCount];
 
         // The first line point is wherever the player's cannon, etc is
         segments[0] = playerFire.transform.position;
 
         // The initial velocity
-        Vector3 segVelocity = playerFire.transform.right * playerFire.fireStrength * Time.deltaTime;
+        segVelocity = playerFire.transform.right * playerFire.fireStrength * Time.deltaTime;
 
         // reset our hit object
         _hitObject = null;
+
 
         for (int i = 1; i < segmentCount; i++)
         {
@@ -60,10 +80,15 @@ public class AffichageTrajectoire : MonoBehaviour
 
                 // set next position to the position where we hit the physics object
                 segments[i] = segments[i - 1] + segVelocity.normalized * hit.distance;
+
+
+
+
+                //POUR FLIP / REBOND
                 // correct ending velocity, since we didn't actually travel an entire segment
-                segVelocity = segVelocity - Physics.gravity * (segmentScale - hit.distance) / segVelocity.magnitude;
+                //segVelocity = segVelocity - Physics.gravity * (segmentScale - hit.distance) / segVelocity.magnitude;
                 // flip the velocity to simulate a bounce
-                segVelocity = Vector3.Reflect(segVelocity, hit.normal);
+                //segVelocity = Vector3.Reflect(segVelocity, hit.normal);
 
                 /*
                     * Here you could check if the object hit by the Raycast had some property - was 
@@ -71,6 +96,7 @@ public class AffichageTrajectoire : MonoBehaviour
                     * instance. You could then end the simulation by setting all further points to 
                     * this last point and then breaking this for loop.
                     */
+
             }
             // If our raycast hit no objects, then set the next position to the last one plus v*t
             else
@@ -91,5 +117,37 @@ public class AffichageTrajectoire : MonoBehaviour
         sightLine.SetVertexCount(segmentCount);
         for (int i = 0; i < segmentCount; i++)
             sightLine.SetPosition(i, segments[i]);
+
+    }
+
+
+    void HighlightObjetTouche()
+    {
+
+        //TEST HIGHLIGHT
+        //Set the main Color of the Material to green
+        if(_hitObject != null)
+        {
+            rend = _hitObject.GetComponent<Renderer>();
+            rend.material.SetColor("_Color", Color.green);
+        }
+
+
+    }
+
+    void Tirer()
+    {
+        Quaternion quaternion = new Quaternion(0, 0, 0, 0);
+        GameObject balle = Instantiate(projectile,transform.position, quaternion);
+        Rigidbody rigidbodyBalle = balle.GetComponent<Rigidbody>();
+        rigidbodyBalle.AddForce(transform.right * velociteProjectile, ForceMode.VelocityChange);
+        //rigidbodyBalle.velocity = balle.transform.forward * velociteProjectile;
+
+        /*for (int i = 0; i < segmentCount; i++)
+        {
+            balle.transform.position = Vector3.Lerp(balle.transform.position, segments[i], velociteProjectile);
+        }*/
+
+
     }
 }
