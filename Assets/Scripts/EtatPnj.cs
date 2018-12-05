@@ -45,13 +45,14 @@ public class EtatPnj : MonoBehaviour {
     public void infecter()
     {
         Debug.Log("le gameobject est infecté");
-        
-       
-        if(!infected)
-        infected = true;
-        time = 0f;
-        contagieux = true;
 
+
+        if (!infected)
+        {
+            infected = true;
+            time = 0f;
+            contagieux = true;
+        }
     }
     public void avancerEtatContagion()
     {
