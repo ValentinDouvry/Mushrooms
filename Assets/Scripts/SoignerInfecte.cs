@@ -13,7 +13,7 @@ public class SoignerInfecte : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(pnjCollisions.Count);
+       // Debug.Log(pnjCollisions.Count);
         if (Input.GetButton("Fire3"))
         {
             if (pnjCollisions.Count > 0)
@@ -32,7 +32,7 @@ public class SoignerInfecte : MonoBehaviour {
 
     void OnCollisionEnter(Collision personnage)
     {
-        Debug.Log("entre en collision");
+        Debug.Log("Le joueur entre en collision");
         EtatPnj etat = personnage.gameObject.GetComponent<EtatPnj>();
         Debug.Log(etat);
         if (etat == null)
