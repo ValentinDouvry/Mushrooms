@@ -8,19 +8,20 @@ public class DeplacementCanon : MonoBehaviour {
 	
 	public float sensibilite = 150.0f;
 
-	public float angleMaxTourelle = 70,
-				angleMaxPosTourrelle,
-				angleMaxNegTourrelle,
-				angleMaxCannon = 45,
-				angleMaxPosCannon,
-				angleMaxNegCannon;
+    public float angleMaxTourelle = 75;
+    public float angleMaxCannon = 45;
+				
 	
 	private float angleXTarget, 
 				angleYTarget, 
 				angleXActuelle, 
-				angleYActuelle;
-	
-	void Start()
+				angleYActuelle,
+                angleMaxPosTourrelle,
+                angleMaxNegTourrelle,
+                angleMaxPosCannon,
+                angleMaxNegCannon;
+
+    void Start()
 	{
 		angleMaxPosTourrelle = angleMaxTourelle;
 		angleMaxNegTourrelle = -angleMaxTourelle;

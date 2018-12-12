@@ -152,6 +152,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114676735656739418, guid: 200264ffa8de0e14ab4d14b6b0cd335d,
+        type: 2}
+      propertyPath: angleMaxCannon
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114676735656739418, guid: 200264ffa8de0e14ab4d14b6b0cd335d,
+        type: 2}
+      propertyPath: angleMaxTourelle
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 200264ffa8de0e14ab4d14b6b0cd335d, type: 2}
   m_IsPrefabAsset: 0

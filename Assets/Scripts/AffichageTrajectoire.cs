@@ -31,6 +31,8 @@ public class AffichageTrajectoire : MonoBehaviour
     private Vector3 segVelocity;
     public float velociteProjectile = 8.7f;
 
+    bool isRightTriggerDown = false;
+
     void FixedUpdate()
     {
         simulatePath();
@@ -39,9 +41,17 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetAxisRaw("Fire1") == 1)
         {
-            Tirer();
+            if (!isRightTriggerDown)
+            {
+                Tirer();
+                isRightTriggerDown = true;
+            }
+        }
+        else if (Input.GetAxisRaw("Fire1") == 0)
+        {
+            isRightTriggerDown = false;
         }
     }
 
