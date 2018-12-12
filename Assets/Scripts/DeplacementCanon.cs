@@ -34,7 +34,7 @@ public class DeplacementCanon : MonoBehaviour {
 		float x = Input.GetAxis("Mouse Y") * Time.deltaTime * sensibilite;
 
 		angleYActuelle = transform.rotation.eulerAngles.x;
-		angleXActuelle = barrel.transform.rotation.eulerAngles.y;
+		angleXActuelle = barrel.transform.rotation.eulerAngles.z;
 
 		angleYTarget += y;
 		angleYTarget = Mathf.Clamp(angleYTarget, angleMaxNegTourrelle, angleMaxPosTourrelle);
@@ -42,7 +42,7 @@ public class DeplacementCanon : MonoBehaviour {
 
 		angleXTarget += x;
 		angleXTarget = Mathf.Clamp(angleXTarget, angleMaxNegCannon, angleMaxPosCannon);
-		barrel.transform.rotation = Quaternion.Euler(angleXTarget, angleYTarget, 0);
+		barrel.transform.rotation = Quaternion.Euler(0, angleYTarget, angleXTarget);
 		
 	}
 }
