@@ -8,13 +8,16 @@ public class EtatPnj : MonoBehaviour {
     public bool contagieux;
     private const float TIMELIMIT = 5f;
     public int chanceInfection = 10;
+    public Camera cameraUI;
+
+    private UiScript ui;
    
 
 	// Use this for initialization
 	void Start () {
         infected = false;
         contagieux = false;
-        
+        ui = cameraUI.gameObject.GetComponent<UiScript>();
        
 	}
 	
@@ -38,6 +41,7 @@ public class EtatPnj : MonoBehaviour {
     {
         infected = false;
         Debug.Log("le pnj a été soigner!");
+        ui.removeInfectedFromCount();
 
     }
     
@@ -49,6 +53,7 @@ public class EtatPnj : MonoBehaviour {
 
         if (!infected)
         {
+            ui.addInfectedToCount();
             infected = true;
             time = 0f;
             contagieux = true;
