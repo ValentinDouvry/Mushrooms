@@ -40,6 +40,7 @@ public class AffichageTrajectoire : MonoBehaviour
     {
         hitPoint = new GameObject("CercleVisée");
         hitPoint.AddComponent<LineRenderer>();
+        hitPoint.transform.rotation = Quaternion.AngleAxis(90, Vector3.right);
     }
 
     void FixedUpdate()
@@ -97,6 +98,7 @@ public class AffichageTrajectoire : MonoBehaviour
                 // remember who we hit
                 _hitObject = hit.collider;
                 hitPoint.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                //hitPoint.transform.rotation = new Quaternion(0, 0, 0, 0);
 
                 // set next position to the position where we hit the physics object
                 segments[i] = segments[i - 1] + segVelocity.normalized * hit.distance;
@@ -163,33 +165,31 @@ public class AffichageTrajectoire : MonoBehaviour
 
     }
 
+    //Variables pour cercle
+    public float theta_scale = 0.01f;
+    public float radius;
+    private int size;
+    private float theta = 0f;
+
     //Dessine le cercle la ou le raycast hit
     void DrawCircle()
     {
 
-        int segmentsCercle = 360;
-        float xradius = 1;
-        float yradius = 1;
-
-        float x;
-        float y;
-        float z;
-        float angle = 20f;
-
         LineRenderer line = hitPoint.GetComponent<LineRenderer>();
-
-        line.SetVertexCount(segmentsCercle + 1);
         line.useWorldSpace = false;
+        line.SetWidth(0.2F, 0.2F);
 
-        for (int i = 0; i < (segmentsCercle + 1); i++)
+        theta = 0f;
+        size = (int)((1f / theta_scale) + 1f);
+        line.SetVertexCount(size);
+        for (int i = 0; i < size; i++)
         {
-            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
-            z = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
-
-            line.SetPosition(i, new Vector3(x, 0, z));
-
-            angle += (360f / segmentsCercle);
-          
+            theta += (2.0f * Mathf.PI * theta_scale);
+            float x = radius * Mathf.Cos(theta);
+            float y = radius * Mathf.Sin(theta);
+            line.SetPosition(i, new Vector3(x, y, 0));
+            line.loop = true;
         }
+
     }
 }

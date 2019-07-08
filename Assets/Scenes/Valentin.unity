@@ -446,7 +446,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4665826352799992, guid: bcecd0cf6ce633a4a9faa137a75f7ed9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.88
+      value: 12.74
       objectReference: {fileID: 0}
     - target: {fileID: 4665826352799992, guid: bcecd0cf6ce633a4a9faa137a75f7ed9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -454,7 +454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4665826352799992, guid: bcecd0cf6ce633a4a9faa137a75f7ed9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 4.05
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 4665826352799992, guid: bcecd0cf6ce633a4a9faa137a75f7ed9, type: 2}
       propertyPath: m_LocalRotation.x
@@ -621,6 +621,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2a2859baeeec7e14785299ea50011ea5, type: 2}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: xradius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: yradius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: angle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: segmentsCercle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: radius
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: numSegments
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114241283443038626, guid: bcecd0cf6ce633a4a9faa137a75f7ed9,
+        type: 2}
+      propertyPath: theta_scale
+      value: 0.0009
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcecd0cf6ce633a4a9faa137a75f7ed9, type: 2}
   m_IsPrefabAsset: 0
