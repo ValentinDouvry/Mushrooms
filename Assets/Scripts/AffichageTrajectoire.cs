@@ -36,6 +36,12 @@ public class AffichageTrajectoire : MonoBehaviour
 
     bool isRightTriggerDown = false;
 
+    //Variables pour cercle
+    public float theta_scale = 0.01f;
+    public float radius;
+    private int size;
+    private float theta = 0f;
+
     private void Start()
     {
         hitPoint = new GameObject("CercleVisée");
@@ -93,10 +99,12 @@ public class AffichageTrajectoire : MonoBehaviour
 
             // Check to see if we're going to hit a physics object
             RaycastHit hit;
-            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale) && hit.transform.gameObject.tag != "projectile")
+            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale) && hit.transform.gameObject.tag != "projectile" && hit.transform.gameObject.tag != "pnj")
             {
+                
                 // remember who we hit
                 _hitObject = hit.collider;
+                Debug.Log(_hitObject.tag);
                 hitPoint.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 //hitPoint.transform.rotation = new Quaternion(0, 0, 0, 0);
 
@@ -165,12 +173,6 @@ public class AffichageTrajectoire : MonoBehaviour
 
     }
 
-    //Variables pour cercle
-    public float theta_scale = 0.01f;
-    public float radius;
-    private int size;
-    private float theta = 0f;
-
     //Dessine le cercle la ou le raycast hit
     void DrawCircle()
     {
@@ -190,6 +192,8 @@ public class AffichageTrajectoire : MonoBehaviour
             line.SetPosition(i, new Vector3(x, y, 0));
             line.loop = true;
         }
+
+        
 
     }
 }

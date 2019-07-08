@@ -17,7 +17,7 @@ public class ExplosionFiole : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision collider)
+    void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "sol")
         {
