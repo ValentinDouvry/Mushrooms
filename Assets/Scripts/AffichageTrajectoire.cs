@@ -21,6 +21,9 @@ public class AffichageTrajectoire : MonoBehaviour
     private Collider _hitObject;
     public Collider hitObject { get { return _hitObject; } }
 
+    private GameObject hitPoint;
+
+
     private Renderer rend;
 
     public GameObject projectile;
@@ -32,6 +35,12 @@ public class AffichageTrajectoire : MonoBehaviour
     public float velociteProjectile = 8.7f;
 
     bool isRightTriggerDown = false;
+
+    private void Start()
+    {
+        hitPoint = new GameObject("CercleVisée");
+        hitPoint.AddComponent<LineRenderer>();
+    }
 
     void FixedUpdate()
     {
@@ -83,16 +92,16 @@ public class AffichageTrajectoire : MonoBehaviour
 
             // Check to see if we're going to hit a physics object
             RaycastHit hit;
-            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale))
+            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale) && hit.transform.gameObject.tag != "projectile")
             {
                 // remember who we hit
                 _hitObject = hit.collider;
+                hitPoint.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
 
                 // set next position to the position where we hit the physics object
                 segments[i] = segments[i - 1] + segVelocity.normalized * hit.distance;
 
-
-
+                DrawCircle();
 
                 //POUR FLIP / REBOND
                 // correct ending velocity, since we didn't actually travel an entire segment
@@ -116,27 +125,20 @@ public class AffichageTrajectoire : MonoBehaviour
         }
 
         // At the end, apply our simulations to the LineRenderer
-
-        // Set the colour of our path to the colour of the next ball
-        Color startColor = playerFire.nextColor;
-        Color endColor = startColor;
-        startColor.a = 1;
-        endColor.a = 0;
-        sightLine.SetColors(startColor, endColor);
-
         sightLine.SetVertexCount(segmentCount);
         for (int i = 0; i < segmentCount; i++)
             sightLine.SetPosition(i, segments[i]);
+
+
 
     }
 
 
     void HighlightObjetTouche()
     {
-
         //TEST HIGHLIGHT
         //Set the main Color of the Material to green
-        if(_hitObject != null)
+        if (_hitObject != null)
         {
             rend = _hitObject.GetComponent<Renderer>();
             rend.material.SetColor("_Color", Color.green);
@@ -159,5 +161,35 @@ public class AffichageTrajectoire : MonoBehaviour
         }*/
 
 
+    }
+
+    //Dessine le cercle la ou le raycast hit
+    void DrawCircle()
+    {
+
+        int segmentsCercle = 360;
+        float xradius = 1;
+        float yradius = 1;
+
+        float x;
+        float y;
+        float z;
+        float angle = 20f;
+
+        LineRenderer line = hitPoint.GetComponent<LineRenderer>();
+
+        line.SetVertexCount(segmentsCercle + 1);
+        line.useWorldSpace = false;
+
+        for (int i = 0; i < (segmentsCercle + 1); i++)
+        {
+            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
+            z = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
+
+            line.SetPosition(i, new Vector3(x, 0, z));
+
+            angle += (360f / segmentsCercle);
+          
+        }
     }
 }

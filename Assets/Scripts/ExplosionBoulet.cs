@@ -18,7 +18,7 @@ public class ExplosionBoulet : MonoBehaviour {
 
     void OnCollisionEnter(Collision collider)
     {
-        if (collider.gameObject.tag == "Ground")
+        if (collider.gameObject.tag == "sol")
         {
             Debug.Log("I hit the ground BANG BANG");
             Instantiate(effetExplosion, transform.position, transform.rotation);
