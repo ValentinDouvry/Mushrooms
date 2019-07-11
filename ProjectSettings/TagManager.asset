@@ -8,6 +8,7 @@ TagManager:
   - pnj
   - Ground
   - projectile
+  - Map
   layers:
   - Default
   - TransparentFX
