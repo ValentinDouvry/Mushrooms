@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac1ba4e6a8ebf154e81c0a215bcd8e27
+guid: 1e8ae12b4286357428c0e2a5753ea28a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -59,7 +59,7 @@ ModelImporter:
     2100002: M_seringue
     4300000: perso
     4300002: seringue
-    7400000: JoueurAction
+    7400000: JoueurIDLE
     9500000: //RootNode
     13700000: perso
     13700002: seringue
@@ -92,17 +92,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: JoueurAction
+      name: JoueurIDLE
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 54
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

@@ -59,7 +59,7 @@ ModelImporter:
     2100002: M_seringue
     4300000: perso
     4300002: seringue
-    7400000: Take 001
+    7400000: JoueurRun
     9500000: //RootNode
     13700000: perso
     13700002: seringue
@@ -92,7 +92,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: JoueurRun
       takeName: Take 001
       firstFrame: 0
       lastFrame: 100
