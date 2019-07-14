@@ -19,9 +19,9 @@ public class ExplosionFiole : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "sol")
+        if (collider.gameObject.tag == "sol" || collider.gameObject.tag == "Map")
         {
-            Debug.Log("Hit ground");
+            //Debug.Log("Hit ground");
             Instantiate(effetExplosion, (gameObject.transform.position + offsetExplosion), new Quaternion(0,0,0,0));
 
             /* Collider[] collisions = Physics.OverlapSphere(transform.position, radiusExplosion);

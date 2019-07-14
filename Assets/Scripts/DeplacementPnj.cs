@@ -14,6 +14,9 @@ public class DeplacementPnj : MonoBehaviour {
     private bool isWalking = false;
     private Animator animator;
 
+    public float tempsDeplacementMin = 0.8f;
+    public float tempsDeplacementMax = 3.0f;
+
 
     // Use this for initialization
     void Start () {
@@ -61,7 +64,7 @@ public class DeplacementPnj : MonoBehaviour {
         float walkWait = Random.Range(0.1f, 0.2f);
 
         //Temps de deplacement
-        float walkTime = Random.Range(0.8f, 3.0f);
+        float walkTime = Random.Range(tempsDeplacementMin, tempsDeplacementMax);
 
         isWandering = true;
 

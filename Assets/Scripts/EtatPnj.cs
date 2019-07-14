@@ -11,15 +11,20 @@ public class EtatPnj : MonoBehaviour {
     public Camera cameraUI;
 
     private UiScript ui;
-   
+    public Material champEmpoisonné;
+    public Material champNormal;
 
-	// Use this for initialization
-	void Start () {
+    private Renderer rend;
+
+
+    // Use this for initialization
+    void Start () {
         infected = false;
         contagieux = false;
         ui = cameraUI.gameObject.GetComponent<UiScript>();
-       
-	}
+        rend = gameObject.GetComponentInChildren<Renderer>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,6 +45,7 @@ public class EtatPnj : MonoBehaviour {
     public void soigner()
     {
         infected = false;
+        rend.material = champNormal;
         Debug.Log("le pnj a été soigner!");
         ui.removeInfectedFromCount();
 
@@ -48,7 +54,7 @@ public class EtatPnj : MonoBehaviour {
     //les truc a changer quand infecter a placer dans la methode infecter
     public void infecter()
     {
-        Debug.Log("le gameobject est infecté");
+        //Debug.Log("le gameobject est infecté");
 
 
         if (!infected)
@@ -57,11 +63,21 @@ public class EtatPnj : MonoBehaviour {
             infected = true;
             time = 0f;
             contagieux = true;
+
+
+            rend.material = champEmpoisonné;
+            
+
+            /*Animator animator = nearbyObject.GetComponent<Animator>();
+               animator.SetBool("dead", true);*/
+
+            /*DeplacementPnj scriptDeplacement = nearbyObject.GetComponent<DeplacementPnj>();
+            scriptDeplacement.enabled = false;*/
         }
     }
     public void avancerEtatContagion()
     {
-        Debug.Log("avancement de la contagion");
+        //Debug.Log("avancement de la contagion");
         time += Time.deltaTime;
         //Debug.Log("le temps" + time);
         if (time > TIMELIMIT)
@@ -80,7 +96,7 @@ public class EtatPnj : MonoBehaviour {
             if(etat != null)
             {
               var nombreRandom = Random.Range(1, chanceInfection + 1);
-              Debug.Log("random number pour infection: " + nombreRandom);
+              //Debug.Log("random number pour infection: " + nombreRandom);
               if(nombreRandom == 1)
               {
                   etat.infecter();

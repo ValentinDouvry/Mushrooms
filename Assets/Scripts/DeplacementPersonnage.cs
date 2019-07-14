@@ -4,33 +4,112 @@ using UnityEngine;
 
 public class DeplacementPersonnage : MonoBehaviour {
 
-    public float speed = 2f;
-    private float hAxis;
-    private float vAxis;
-    Quaternion targetRotation;
-    private float joystickTreshold = 0.19f;
-    Vector3 input;
+    public float velocity = 5;
+    public float turnspeed = 10;
 
-	// Use this for initialization
-	void Start () {
-	  
-	}
-	
-	// Update is called once per frame
-	void Update () {
-       hAxis = Input.GetAxis("Horizontal");
-       vAxis = Input.GetAxis("Vertical");
-       
-       input = new Vector3(hAxis, 0, vAxis);
+    private float speed;
 
-       if (input.magnitude > joystickTreshold)
-       {
-           transform.rotation = Quaternion.LookRotation(input);
-           transform.Translate(input.normalized * speed * Time.deltaTime, Space.World);
-       }
+    private Vector2 input;
+    private float angle;
 
-		
-	}
+    private Quaternion targetRotation;
+    private Transform cam;
+    private Animator animator;
+
+    private List<EtatPnj> pnjCollisions;
+
+    // Use this for initialization
+    void Start()
+    {
+        cam = Camera.main.transform;
+        animator = gameObject.GetComponent<Animator>();
+        pnjCollisions = new List<EtatPnj>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetButtonDown("Soin"))
+        {         
+            animator.SetBool("Action", true);
+            Debug.Log("Action");
+            if (pnjCollisions.Count > 0)
+            {
+                if (pnjCollisions[0].IsInfected())
+                {
+                    pnjCollisions[0].soigner();
+                    pnjCollisions.Remove(pnjCollisions[0]); 
+                }
+            }            
+        }
+        else
+        {
+            animator.SetBool("Action", false);
+        }
+
+        GetInput();
+
+        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1)
+        {
+            animator.SetFloat("Speed", 0f);
+            return;            
+        }
+
+        CalculateDirection();
+        Rotate();
+        Move();
+
+        
+    }
+
+    void GetInput()
+    {
+        input.x = Input.GetAxisRaw("HorizontalJ2");
+        input.y = Input.GetAxisRaw("VerticalJ2");
+    }
+
+    void CalculateDirection()
+    {
+        angle = Mathf.Atan2(input.x, input.y);
+        angle = Mathf.Rad2Deg * angle;
+
+        angle += cam.eulerAngles.y;
+
+    }
+
+    void Rotate()
+    {
+        targetRotation = Quaternion.Euler(0,angle,0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnspeed * Time.deltaTime);
+    }
+
+    void Move()
+    {
+        animator.SetFloat("Speed",1f);
+        transform.position += transform.forward * velocity * Time.deltaTime;
+    }
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
+        if (etat == null)
+            return;
+
+        pnjCollisions.Add(etat);
+
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
+        if (etat == null)
+            return;
+        pnjCollisions.Remove(etat);
+
+
+    }
+
 
 
 }
