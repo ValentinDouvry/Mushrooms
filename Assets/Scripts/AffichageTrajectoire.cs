@@ -34,7 +34,6 @@ public class AffichageTrajectoire : MonoBehaviour
     private Vector3 segVelocity;
     public float velociteProjectile = 8.7f;
 
-    bool isRightTriggerDown = false;
 
     //Variables pour cercle
     public float theta_scale = 0.01f;
@@ -57,18 +56,10 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetAxisRaw("Fire1") == 1)
+        if(Input.GetButtonDown("Fire1"))
         {
-            if (!isRightTriggerDown)
-            {
-                Tirer();
-                isRightTriggerDown = true;
-            }
-        }
-        else if (Input.GetAxisRaw("Fire1") == 0)
-        {
-            isRightTriggerDown = false;
-        }
+            Tirer();
+        }            
     }
 
     /// <summary>
@@ -99,15 +90,14 @@ public class AffichageTrajectoire : MonoBehaviour
 
             // Check to see if we're going to hit a physics object
             RaycastHit hit;
-            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale) && hit.transform.gameObject.tag != "projectile" && hit.transform.gameObject.tag != "pnj")
+            if (Physics.Raycast(segments[i - 1], segVelocity, out hit, segmentScale) && hit.transform.gameObject.tag == "sol")
             {
-                
                 // remember who we hit
                 _hitObject = hit.collider;
-                Debug.Log(_hitObject.tag);
+                //Debug.Log(_hitObject.tag + _hitObject.name);
                 hitPoint.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 //hitPoint.transform.rotation = new Quaternion(0, 0, 0, 0);
-
+                //Debug.Log(hitPoint.transform.position);
                 // set next position to the position where we hit the physics object
                 segments[i] = segments[i - 1] + segVelocity.normalized * hit.distance;
 
@@ -159,6 +149,7 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void Tirer()
     {
+        Debug.Log("Tir");
         Quaternion quaternion = new Quaternion(0, 0, 0, 0);
         GameObject balle = Instantiate(projectile,transform.position, quaternion);
         Rigidbody rigidbodyBalle = balle.GetComponent<Rigidbody>();
