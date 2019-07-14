@@ -30,8 +30,8 @@ public class DeplacementCanon : MonoBehaviour {
 	}
 
 	void Update () {
-		float y = Input.GetAxis("Horizontal") * Time.deltaTime * sensibilite; 
-		float x = Input.GetAxis("Mouse Y") * Time.deltaTime * sensibilite;
+		float y = Input.GetAxis("HorizontalTurret") * Time.deltaTime * sensibilite; 
+		float x = Input.GetAxis("VerticalTurret") * Time.deltaTime * sensibilite;
 
 		angleYActuelle = transform.rotation.eulerAngles.x;
 		angleXActuelle = barrel.transform.rotation.eulerAngles.z;
