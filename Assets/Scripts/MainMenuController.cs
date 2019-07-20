@@ -7,14 +7,20 @@ public class MainMenuController : MonoBehaviour {
 
 	public void Play()
     {
-        // Get next scene in project build settings
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Pour ne pas avoir un depart trop rapide
+        StartCoroutine(StartGame());
     }
 
     public void Quit()
     {
-        // Only works in build so only logs in editor
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
