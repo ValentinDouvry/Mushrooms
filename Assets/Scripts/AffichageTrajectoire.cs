@@ -41,6 +41,10 @@ public class AffichageTrajectoire : MonoBehaviour
     private int size;
     private float theta = 0f;
 
+    public bool tirPossible = true;
+    public float fireRate = 0.5f;
+    private float nextFire;
+
     private void Start()
     {
         hitPoint = new GameObject("CercleVisée");
@@ -56,8 +60,9 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && tirPossible && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
             Tirer();
         }            
     }

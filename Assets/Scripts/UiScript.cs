@@ -12,31 +12,56 @@ public class UiScript : MonoBehaviour {
     private string timeSeconds;
     private int infectedCount;
 
-	// Use this for initialization
-	void Start () {
+    private int totalNPC;
+    private int numberOfPlayers;
+
+    private bool gameEnded = false;
+
+    public InGameManager inGameManager;
+
+    // Use this for initialization
+    void Start () {
         infectedCount = 0;
-	}
+        numberOfPlayers = GameSettingsManager.getNumberOfPlayer();
+        if(numberOfPlayers == 1)
+        {
+            totalNPC = 8;
+        }
+        else
+        {
+            totalNPC = 16;
+        }
+
+    }
 	
 	// Update is called once per frame
-	void Update () {
-        refreshTimer();
-        reduceTime();
-        refreshInfectedCount();
-	}
+	void Update ()
+    {
+        if (time > 0 && gameEnded == false)
+        {
+            refreshInfectedCount();
 
-    void reduceTime()
-    {
-        time -= Time.deltaTime;
+            time -= Time.deltaTime;
+            textTemps.text = "" + Mathf.Round(time) + "s";
+
+            if (time < 0)
+            {
+                time = 0;
+                gameEnded = true;
+            }            
+        }
+
+        if (gameEnded == true)
+        {
+            inGameManager.DisablePlayers(infectedCount);
+        }
+        
+        
     }
-    void refreshTimer()
-    {
-        timeMinutes = Mathf.Floor(time / 60).ToString("00");
-        timeSeconds = Mathf.RoundToInt(time % 60).ToString("00");
-        textTemps.text = timeMinutes + ":" + timeSeconds;
-    }
+
     void refreshInfectedCount()
     {
-        textInfectedCount.text = infectedCount.ToString();
+        textInfectedCount.text = infectedCount.ToString() + " / " + totalNPC.ToString();
     }
    public void addInfectedToCount()
     {
@@ -47,4 +72,6 @@ public class UiScript : MonoBehaviour {
         if (infectedCount > 0) 
         infectedCount--;
     }
+
+
 }

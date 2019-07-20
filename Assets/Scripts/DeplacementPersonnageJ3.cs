@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeplacementPersonnage : MonoBehaviour {
+public class DeplacementPersonnageJ3 : MonoBehaviour {
 
     public float velocity = 5;
     public float turnspeed = 10;
@@ -30,8 +30,8 @@ public class DeplacementPersonnage : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetButtonDown("Soin"))
-        {         
+        if (Input.GetButtonDown("SoinJ3"))
+        {
             animator.SetBool("Action", true);
             Debug.Log("Action");
             if (pnjCollisions.Count > 0)
@@ -39,9 +39,9 @@ public class DeplacementPersonnage : MonoBehaviour {
                 if (pnjCollisions[0].IsInfected())
                 {
                     pnjCollisions[0].soigner();
-                    pnjCollisions.Remove(pnjCollisions[0]); 
+                    pnjCollisions.Remove(pnjCollisions[0]);
                 }
-            }            
+            }
         }
         else
         {
@@ -53,20 +53,20 @@ public class DeplacementPersonnage : MonoBehaviour {
         if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1)
         {
             animator.SetFloat("Speed", 0f);
-            return;            
+            return;
         }
 
         CalculateDirection();
         Rotate();
         Move();
 
-        
+
     }
 
     void GetInput()
     {
-        input.x = Input.GetAxisRaw("HorizontalJ2");
-        input.y = Input.GetAxisRaw("VerticalJ2");
+        input.x = Input.GetAxisRaw("HorizontalJ3");
+        input.y = Input.GetAxisRaw("VerticalJ3");
     }
 
     void CalculateDirection()
@@ -80,32 +80,40 @@ public class DeplacementPersonnage : MonoBehaviour {
 
     void Rotate()
     {
-        targetRotation = Quaternion.Euler(0,angle,0);
+        targetRotation = Quaternion.Euler(0, angle, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnspeed * Time.deltaTime);
     }
 
     void Move()
     {
-        animator.SetFloat("Speed",1f);
+        animator.SetFloat("Speed", 1f);
         transform.position += transform.forward * velocity * Time.deltaTime;
     }
 
 
     void OnCollisionEnter(Collision collision)
     {
-        EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
-        if (etat == null)
-            return;
+        if(collision.gameObject.tag == "pnj")
+        {
+            EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
+            if (etat == null)
+                return;
 
-        pnjCollisions.Add(etat);
+            pnjCollisions.Add(etat);
+        }
+        
 
     }
     void OnCollisionExit(Collision collision)
     {
-        EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
-        if (etat == null)
-            return;
-        pnjCollisions.Remove(etat);
+        if (collision.gameObject.tag == "pnj")
+        {
+            EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
+            if (etat == null)
+                return;
+            pnjCollisions.Remove(etat);
+        }
+        
 
 
     }
