@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7c0955a843cac66449fb7754cda3fcdb, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5213359, g: 0.58748287, b: 0.8632831, a: 1}
+  m_IndirectSpecularColor: {r: 0.009786535, g: 0.05188808, b: 0.1522932, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -856,9 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149f53df6d4254d4ab5a2241d94174ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefabJ2: {fileID: 1652523380764920, guid: b20752963c5a92740b4c5799be9611cf,
+  playerPrefabJ2: {fileID: 1736148490737014, guid: 30662d7ed0a18e9488ce94bb776ef2d2,
     type: 2}
-  playerPrefabJ3: {fileID: 1070114579996246, guid: be777ea79512638479e099a16fd09697,
+  playerPrefabJ3: {fileID: 1143833086764236, guid: 5ed78ef7eb28d0e4cb2a51cb1f8ace6b,
     type: 2}
   spawnPoint1: {fileID: 703744675}
   spawnPoint2: {fileID: 124077728}
@@ -9358,7 +9358,7 @@ GameObject:
   - component: {fileID: 1824227351}
   - component: {fileID: 1824227354}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: TerrainJour
   m_TagString: sol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
