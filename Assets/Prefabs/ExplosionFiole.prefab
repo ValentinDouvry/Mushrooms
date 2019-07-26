@@ -324,7 +324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4134747919029918}
   - component: {fileID: 198174732193203400}
-  - component: {fileID: 114774335011367782}
   - component: {fileID: 199352339621676540}
   m_Layer: 0
   m_Name: SmokeCircle
@@ -361,6 +360,7 @@ GameObject:
   - component: {fileID: 198695691807505776}
   - component: {fileID: 199147327415941488}
   - component: {fileID: 114663647493459568}
+  - component: {fileID: 114327898203908408}
   m_Layer: 0
   m_Name: CFX2_WWExplosion_C
   m_TagString: Untagged
@@ -698,6 +698,21 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114327898203908408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989085397239272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa617e622c1f87b46946350312cb01ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2.5
+  offsetX: 0
+  offsetY: 0
+  offsetZ: 0
 --- !u!114 &114663647493459568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -725,18 +740,6 @@ MonoBehaviour:
   delay: 0.1
   finalIntensity: 0
   autodestruct: 1
---- !u!114 &114774335011367782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1945005685649022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa617e622c1f87b46946350312cb01ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1.6
 --- !u!198 &198158794669648838
 ParticleSystem:
   m_ObjectHideFlags: 1

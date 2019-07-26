@@ -155,8 +155,7 @@ public class AffichageTrajectoire : MonoBehaviour
     void Tirer()
     {
         Debug.Log("Tir");
-        Quaternion quaternion = new Quaternion(0, 0, 0, 0);
-        GameObject balle = Instantiate(projectile,transform.position, quaternion);
+        GameObject balle = Instantiate(projectile,transform.position, Quaternion.Euler(-90, 0, 0));
         Rigidbody rigidbodyBalle = balle.GetComponent<Rigidbody>();
         rigidbodyBalle.AddForce(transform.right * velociteProjectile, ForceMode.VelocityChange);
         //rigidbodyBalle.velocity = balle.transform.forward * velociteProjectile;
