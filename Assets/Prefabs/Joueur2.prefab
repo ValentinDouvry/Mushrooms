@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 54584622522913682}
   - component: {fileID: 65224450982211028}
   - component: {fileID: 114818829856883232}
+  - component: {fileID: 136988157156492406}
   m_Layer: 0
   m_Name: Joueur2
   m_TagString: Player
@@ -783,7 +784,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65224450982211028
 BoxCollider:
@@ -793,7 +794,7 @@ BoxCollider:
   m_GameObject: {fileID: 1736148490737014}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.4763871, y: 1.02992, z: 0.5910845}
   m_Center: {x: -0.017453551, y: 0.48870406, z: -0.12466955}
@@ -828,6 +829,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 8
   turnspeed: 8
+--- !u!136 &136988157156492406
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736148490737014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2838274
+  m_Height: 1.0355833
+  m_Direction: 1
+  m_Center: {x: -0.008082469, y: 0.4820633, z: -0.103036106}
 --- !u!137 &137353276543796384
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
