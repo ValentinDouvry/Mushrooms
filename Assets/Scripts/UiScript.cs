@@ -61,7 +61,8 @@ public class UiScript : MonoBehaviour {
 
     void refreshInfectedCount()
     {
-        textInfectedCount.text = infectedCount.ToString() + " / " + totalNPC.ToString();
+        textInfectedCount.text = "Toxiques : " + infectedCount.ToString();
+        //textInfectedCount.text = infectedCount.ToString() + " / " + totalNPC.ToString();
     }
    public void addInfectedToCount()
     {
