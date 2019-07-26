@@ -1163,7 +1163,7 @@ GameObject:
   m_Layer: 0
   m_Name: BoutCanon
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14270,11 +14270,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 2f481d2dd1543f14d8f739a162a9a9fc, type: 2}
-  m_TreeDistance: 300
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 500
-  m_DetailObjectDistance: 250
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 0
@@ -14291,8 +14291,8 @@ Terrain:
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
-  m_ScaleInLightmap: 0.0512
-  m_LightmapParameters: {fileID: 15201, guid: 0000000000000000f000000000000000, type: 0}
+  m_ScaleInLightmap: 1
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &1824227353
 Transform:
   m_ObjectHideFlags: 0
@@ -14347,7 +14347,9 @@ MonoBehaviour:
   terrain: {fileID: 1824227352}
   reenabled: 1
   sTerrainDirty: 0
-  importSplatMaps: []
+  importSplatMaps:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1857701937
 Prefab:
   m_ObjectHideFlags: 0
