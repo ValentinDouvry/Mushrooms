@@ -12,10 +12,11 @@ public class InGameManager : MonoBehaviour {
     private GameObject player1, player2, player3;
 
     public int numberOfPlayers;
+
+
     // Use this for initialization
     void Start ()
-    {
-        
+    {        
         numberOfPlayers = GameSettingsManager.getNumberOfPlayer();
         Debug.Log(numberOfPlayers);
         SpawnPlayers();

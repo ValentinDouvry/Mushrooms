@@ -12,7 +12,6 @@ public class MainMenuController : MonoBehaviour {
 	public void Play()
     {
         // Pour ne pas avoir un depart trop rapide
-
         StartCoroutine(StartGame());
     }
 

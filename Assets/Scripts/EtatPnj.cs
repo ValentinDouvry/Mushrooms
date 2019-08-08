@@ -11,14 +11,15 @@ public class EtatPnj : MonoBehaviour {
     public Camera cameraUI;
 
     private UiScript ui;
-    public Material champEmpoisonné;
+    public Material champEmpoisonne;
     public Material champNormal;
 
     private Renderer rend;
 
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         infected = false;
         contagieux = false;
         ui = cameraUI.gameObject.GetComponent<UiScript>();
@@ -27,13 +28,12 @@ public class EtatPnj : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         if (contagieux)
-            avancerEtatContagion();
-           
-
-		
+        {
+            AvancerEtatContagion();
+        }	
 	}
 
    public bool IsInfected()
@@ -41,48 +41,39 @@ public class EtatPnj : MonoBehaviour {
         return infected;
     }
     
- //les truc a changer quand soigner a placer dans la methode soigner
-    public void soigner()
+    public void Soigner()
     {
         infected = false;
         rend.material = champNormal;
         Debug.Log("le pnj a été soigner!");
-        ui.removeInfectedFromCount();
+        ui.RemoveInfectedFromCount();
 
     }
     
-    //les truc a changer quand infecter a placer dans la methode infecter
-    public void infecter()
+    public void Infecter()
     {
         //Debug.Log("le gameobject est infecté");
 
 
         if (!infected)
         {
-            ui.addInfectedToCount();
+            ui.AddInfectedToCount();
             infected = true;
             time = 0f;
             contagieux = true;
 
-
-            rend.material = champEmpoisonné;
+            rend.material = champEmpoisonne;
             
-
-            /*Animator animator = nearbyObject.GetComponent<Animator>();
-               animator.SetBool("dead", true);*/
-
-            /*DeplacementPnj scriptDeplacement = nearbyObject.GetComponent<DeplacementPnj>();
-            scriptDeplacement.enabled = false;*/
         }
     }
-    public void avancerEtatContagion()
+    public void AvancerEtatContagion()
     {
         //Debug.Log("avancement de la contagion");
         time += Time.deltaTime;
-        //Debug.Log("le temps" + time);
+
         if (time > TIMELIMIT)
         {
-            Debug.Log("le gameObject n'est plus contagieux");
+            //Debug.Log("le gameObject n'est plus contagieux");
             contagieux = false;
         }
 
@@ -90,19 +81,19 @@ public class EtatPnj : MonoBehaviour {
 
     void OnCollisionEnter(Collision personnage)
     {
+        //Un champignon infecté a une chance d'infecter un champignon sain en entrant en collision avec lui.
         if(contagieux)
         {
             EtatPnj etat = personnage.gameObject.GetComponent<EtatPnj>();
             if(etat != null)
             {
-              var nombreRandom = Random.Range(1, chanceInfection + 1);
+              int nombreRandom = Random.Range(1, chanceInfection + 1);
               //Debug.Log("random number pour infection: " + nombreRandom);
               if(nombreRandom == 1)
               {
-                  etat.infecter();
-                  Debug.Log("Le gameobject a infecter un autre gameobject");
+                  etat.Infecter();
+                  //Debug.Log("Le gameobject a infecter un autre gameobject");
               }
-                ;
             }
         }
     }

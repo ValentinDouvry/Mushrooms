@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class UiScript : MonoBehaviour {
+
     public float time = 60f;
     public Text textTemps;
     public Text textInfectedCount;
@@ -20,7 +21,8 @@ public class UiScript : MonoBehaviour {
     public InGameManager inGameManager;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         infectedCount = 0;
         numberOfPlayers = GameSettingsManager.getNumberOfPlayer();
         if(numberOfPlayers == 1)
@@ -39,7 +41,7 @@ public class UiScript : MonoBehaviour {
     {
         if (time > 0 && gameEnded == false)
         {
-            refreshInfectedCount();
+            RefreshInfectedCount();
 
             time -= Time.deltaTime;
             textTemps.text = "" + Mathf.Round(time) + "s";
@@ -59,16 +61,16 @@ public class UiScript : MonoBehaviour {
         
     }
 
-    void refreshInfectedCount()
+    void RefreshInfectedCount()
     {
         textInfectedCount.text = "Toxiques : " + infectedCount.ToString();
         //textInfectedCount.text = infectedCount.ToString() + " / " + totalNPC.ToString();
     }
-   public void addInfectedToCount()
+   public void AddInfectedToCount()
     {
         infectedCount++;
     }
-   public void removeInfectedFromCount()
+   public void RemoveInfectedFromCount()
     {
         if (infectedCount > 0) 
         infectedCount--;

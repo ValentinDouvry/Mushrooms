@@ -106,6 +106,8 @@ public class AffichageTrajectoire : MonoBehaviour
                 // set next position to the position where we hit the physics object
                 segments[i] = segments[i - 1] + segVelocity.normalized * hit.distance;
 
+
+                //Draw the circle on the floor to aim 
                 DrawCircle();
 
                 //POUR FLIP / REBOND
@@ -141,7 +143,7 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void HighlightObjetTouche()
     {
-        //TEST HIGHLIGHT
+        //TEST HIGHLIGHT DES OBJETS DANS LA ZONE VISEE
         //Set the main Color of the Material to green
         if (_hitObject != null)
         {
@@ -154,7 +156,7 @@ public class AffichageTrajectoire : MonoBehaviour
 
     void Tirer()
     {
-        Debug.Log("Tir");
+        //Debug.Log("Tir");
         GameObject balle = Instantiate(projectile,transform.position, Quaternion.Euler(-90, 0, 0));
         Rigidbody rigidbodyBalle = balle.GetComponent<Rigidbody>();
         rigidbodyBalle.AddForce(transform.right * velociteProjectile, ForceMode.VelocityChange);

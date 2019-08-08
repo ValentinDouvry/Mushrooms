@@ -506,8 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &95276854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,8 +523,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &95276855
 BoxCollider:
@@ -919,6 +918,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 61115406}
+  commandMenu: {fileID: 1047871772}
+  quitMenu: {fileID: 103978388}
+  eventSystem: {fileID: 1521403538}
+  buttonContinue: {fileID: 1175807706}
 --- !u!114 &117889001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,8 +1561,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &233381799
 MonoBehaviour:
@@ -1574,8 +1576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &233381800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1830,8 +1832,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &265413545
 MonoBehaviour:
@@ -1846,8 +1847,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &265413546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2057,8 +2058,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &272922105
 MonoBehaviour:
@@ -2073,8 +2073,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &272922106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7696,8 +7696,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &483881388
 MonoBehaviour:
@@ -7712,8 +7711,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &483881389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7764,8 +7763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &506727949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7781,8 +7780,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &506727950
 BoxCollider:
@@ -8144,8 +8142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &549382223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,8 +8159,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &549382224
 BoxCollider:
@@ -9503,8 +9500,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &881397796
 MonoBehaviour:
@@ -9519,8 +9515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &881397797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9651,8 +9647,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &885330403
 MonoBehaviour:
@@ -9667,8 +9662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &885330404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9799,8 +9794,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &890109606
 MonoBehaviour:
@@ -9815,8 +9809,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &890109607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10025,8 +10019,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &919580720
 MonoBehaviour:
@@ -10041,8 +10034,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &919580721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10231,8 +10224,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &934878312
 MonoBehaviour:
@@ -10247,8 +10239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &934878313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10530,8 +10522,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &968835199
 MonoBehaviour:
@@ -10546,8 +10537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &968835200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10598,8 +10589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &985221909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10615,8 +10606,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &985221910
 BoxCollider:
@@ -10929,8 +10919,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &1044881343
 MonoBehaviour:
@@ -10945,8 +10934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &1044881344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11390,8 +11379,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &1096999379
 MonoBehaviour:
@@ -11406,8 +11394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &1096999380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11458,8 +11446,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &1117953841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11475,8 +11463,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &1117953842
 BoxCollider:
@@ -11699,8 +11686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &1138134704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11716,8 +11703,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &1138134705
 BoxCollider:
@@ -11751,6 +11737,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: cdbf97b44fbf13c40a22065bedd4bb42,
     type: 3}
   m_PrefabInternal: {fileID: 2105609088}
+--- !u!1001 &1148390821
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.4299984
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.6999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.987749
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.1560514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759583012515730, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114108916444584728, guid: 8851cad7f5d5aa84f95426a78a9daa79,
+        type: 2}
+      propertyPath: cameraUI
+      value: 
+      objectReference: {fileID: 117888996}
+    - target: {fileID: 1372770988718758, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+      propertyPath: m_Name
+      value: champignonBase
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8851cad7f5d5aa84f95426a78a9daa79, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1175807706
 GameObject:
   m_ObjectHideFlags: 0
@@ -13825,8 +13862,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &1500188130
 MonoBehaviour:
@@ -13841,8 +13877,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &1500188131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14526,8 +14562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &1696850277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14543,8 +14579,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &1696850278
 BoxCollider:
@@ -14743,8 +14778,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &1721569966
 MonoBehaviour:
@@ -14759,8 +14793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &1721569967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14959,8 +14993,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!114 &1803489105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14976,8 +15010,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!65 &1803489106
 BoxCollider:
@@ -15711,8 +15744,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &1924843956
 MonoBehaviour:
@@ -15727,8 +15759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &1924843957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16677,8 +16709,7 @@ MonoBehaviour:
   contagieux: 0
   chanceInfection: 10
   cameraUI: {fileID: 117888996}
-  "champEmpoisonn\xE9": {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5,
-    type: 2}
+  champEmpoisonne: {fileID: 2100000, guid: f8cf8005b3a611d46be14578f1ce5ca5, type: 2}
   champNormal: {fileID: 2100000, guid: f6448d7d2bdadda4e8ea9416357bf340, type: 2}
 --- !u!114 &2109254804
 MonoBehaviour:
@@ -16693,8 +16724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotspeed: 400
-  tempsDeplacementMin: 0.8
-  tempsDeplacementMax: 3
+  timeMovingMin: 0.8
+  timeMovingMax: 3
 --- !u!65 &2109254805
 BoxCollider:
   m_ObjectHideFlags: 0

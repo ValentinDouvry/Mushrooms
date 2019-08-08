@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseManager : MonoBehaviour {
 
     public static bool gameIsPaused = false;
 
     public GameObject pauseMenu;
+    public GameObject commandMenu;
+    public GameObject quitMenu;
+    public EventSystem eventSystem;
+    public GameObject buttonContinue;
+    
 
     private void Update()
     {
@@ -40,20 +46,24 @@ public class PauseManager : MonoBehaviour {
         Resume();
     }
 
+    // Stop game mouvement
     private void Pause()
-    {
-        // Stop game mouvement
+    {        
+        eventSystem.SetSelectedGameObject(buttonContinue, new BaseEventData(eventSystem));
+        
         Debug.Log("Game Paused");
         Time.timeScale = 0f;
     }
 
+    // resume game mouvement
     public void Resume()
-    {
-        // resume game mouvement
+    {        
         Debug.Log("Game Resumed");
         Time.timeScale = 1f;
-        gameIsPaused = false;
+        commandMenu.SetActive(false);
+        quitMenu.SetActive(false);
 
+        //gameIsPaused = false;
     }
 
     public void Restart()

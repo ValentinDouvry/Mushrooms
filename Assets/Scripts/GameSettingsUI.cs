@@ -13,21 +13,20 @@ public class GameSettingsUI : MonoBehaviour {
         playerNumber = transform.root.GetComponentInChildren<Slider>();
         playerNumberText = transform.GetComponent<Text>();
 
-        // To get default value
-        refreshUI();
+        RefreshUI();
     }
 
     private void OnEnable()
     {
-        EventManager.AddListner("PlayerNumberChanger", refreshUI);
+        EventManager.AddListner("PlayerNumberChanger", RefreshUI);
     }
 
     private void OnDisable()
     {
-        EventManager.RemoveListner("PlayerNumberChanger", refreshUI);
+        EventManager.RemoveListner("PlayerNumberChanger", RefreshUI);
     }
 
-    void refreshUI()
+    void RefreshUI()
     {
         playerNumberText.text = playerNumber.value + " joueurs";        
     }

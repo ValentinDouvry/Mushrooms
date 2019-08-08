@@ -10,34 +10,26 @@ public class InfectionExplosion : MonoBehaviour {
     public float offsetY;
     public float offsetZ;
     Collider[] colliders;
+
 	// Use this for initialization
 	void Start ()
     {
-
+        //crée une sphère avec un collider de la taille de l'explosion 
         colliders = Physics.OverlapSphere(new Vector3(transform.position.x,transform.position.y,transform.position.z), radius);
         foreach (Collider nearbyObject in colliders)
         {
             //Debug.Log("tag : " + nearbyObject.tag);
             if(nearbyObject.tag == "pnj")
             {
-
                 EtatPnj scriptInfecterPnj = nearbyObject.GetComponent<EtatPnj>();
-                scriptInfecterPnj.infecter();
-
-            }
-            
+                scriptInfecterPnj.Infecter();
+            }            
         }
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
+    //Dessine la sphère de l'explosion lorsque le gameobjet est selectionné pour le debug
     void OnDrawGizmosSelected()
     {
-        // Display the explosion radius when selected
         Gizmos.color = new Color(1, 1, 0, 0.75F);
         Gizmos.DrawWireSphere(transform.position, radius);
     }

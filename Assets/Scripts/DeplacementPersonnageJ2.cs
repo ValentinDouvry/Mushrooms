@@ -34,11 +34,14 @@ public class DeplacementPersonnageJ2 : MonoBehaviour {
         {         
             animator.SetBool("Action", true);
             Debug.Log("Action");
+
+            //Vérifie si le joueur est en collision avec un ou des PNJ
             if (pnjCollisions.Count > 0)
             {
+                //Vérifie si le 1er PNJ de la liste des PNJ en collision est infecté
                 if (pnjCollisions[0].IsInfected())
                 {
-                    pnjCollisions[0].soigner();
+                    pnjCollisions[0].Soigner();
                     pnjCollisions.Remove(pnjCollisions[0]); 
                 }
             }            
@@ -69,6 +72,7 @@ public class DeplacementPersonnageJ2 : MonoBehaviour {
         input.y = Input.GetAxisRaw("VerticalJ2");
     }
 
+    //Calcule la direction du personnage avec l'input de la manette par rapport à la caméra
     void CalculateDirection()
     {
         angle = Mathf.Atan2(input.x, input.y);
@@ -78,12 +82,14 @@ public class DeplacementPersonnageJ2 : MonoBehaviour {
 
     }
 
+    //Rotate le personnage vers la direction 
     void Rotate()
     {
         targetRotation = Quaternion.Euler(0,angle,0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnspeed * Time.deltaTime);
     }
 
+    //Fais avancer le personnage dans la direction
     void Move()
     {
         animator.SetFloat("Speed",1f);
@@ -97,7 +103,9 @@ public class DeplacementPersonnageJ2 : MonoBehaviour {
         {
             EtatPnj etat = collision.gameObject.GetComponent<EtatPnj>();
             if (etat == null)
+            {
                 return;
+            }                
 
             pnjCollisions.Add(etat);
         }

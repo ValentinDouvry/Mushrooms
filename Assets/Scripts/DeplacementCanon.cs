@@ -23,6 +23,8 @@ public class DeplacementCanon : MonoBehaviour {
 
     void Start()
 	{
+
+        //Mets en place les angles maximaux pour viser avec la tourelle ( gauche/droite et haut/bas)
 		angleMaxPosTourrelle = angleMaxTourelle;
 		angleMaxNegTourrelle = -angleMaxTourelle;
 		angleMaxNegCannon = -angleMaxCannon;
